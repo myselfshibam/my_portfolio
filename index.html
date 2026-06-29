@@ -1644,15 +1644,52 @@ h2.st{font-size:clamp(1.75rem,3.5vw,2.4rem);font-weight:700;letter-spacing:-.025
         💬 chat on whatsapp
       </a>
     </div>
-    <div class="cform">
-      <div><label class="flbl">YOUR NAME</label><input class="finp" type="text" placeholder="Alex Johnson"></div>
-      <div><label class="flbl">EMAIL</label><input class="finp" type="email" placeholder="alex@company.com"></div>
-      <div><label class="flbl">MESSAGE</label><textarea class="finp" rows="4" placeholder="I'm hiring for a data science role and think you'd be a great fit..."></textarea></div>
-      <button class="btn1" style="width:100%;padding:.9rem;font-size:12px;text-align:center;border:none;cursor:pointer"
-        onclick="this.textContent='✓ message sent!';setTimeout(()=>this.textContent='→ send message',3000)">
-        → send message
-      </button>
+    <form action="https://formsubmit.co/mitrashibam89@gmail.com" method="POST" class="cform">
+
+    <!-- Disable captcha (optional) -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- Redirect after successful submission (optional) -->
+    <!-- <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html"> -->
+
+    <div>
+        <label class="flbl">YOUR NAME</label>
+        <input
+            class="finp"
+            type="text"
+            name="name"
+            placeholder="Alex Johnson"
+            required>
     </div>
+
+    <div>
+        <label class="flbl">EMAIL</label>
+        <input
+            class="finp"
+            type="email"
+            name="email"
+            placeholder="alex@company.com"
+            required>
+    </div>
+
+    <div>
+        <label class="flbl">MESSAGE</label>
+        <textarea
+            class="finp"
+            name="message"
+            rows="4"
+            placeholder="I'm hiring for a data science role and think you'd be a great fit..."
+            required></textarea>
+    </div>
+
+    <button
+        class="btn1"
+        type="submit"
+        style="width:100%;padding:.9rem;font-size:12px;text-align:center;border:none;cursor:pointer">
+        → Send Message
+    </button>
+
+</form>
   </div>
 </section>
 </div>
