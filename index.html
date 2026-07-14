@@ -373,6 +373,224 @@ h2.st{font-size:clamp(1.75rem,3.5vw,2.4rem);font-weight:700;letter-spacing:-.025
 }
 .chip:hover{border-color:var(--cyan);color:var(--cyan);background:var(--surface)}
 
+  /* ═══ INTERNSHIPS ═══ */
+.intern-wrap{position:relative;margin-top:3rem}
+.intern-wrap::before{
+  content:'';position:absolute;left:27px;top:8px;bottom:8px;width:1px;
+  background:linear-gradient(180deg,var(--cyan),var(--violet) 60%,transparent);
+  opacity:.35;
+}
+.intern-item{
+  position:relative;display:grid;grid-template-columns:56px 1fr;
+  gap:1.75rem;margin-bottom:1.5rem;
+}
+.intern-item:last-child{margin-bottom:0}
+.intern-node{
+  width:56px;height:56px;border-radius:14px;position:relative;z-index:1;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--bg3);border:1px solid var(--b2);
+  font-family:var(--mono);font-size:18px;
+  box-shadow:0 0 0 6px var(--bg),0 0 22px rgba(6,182,212,.12);
+  transition:all .3s;
+}
+.intern-item:hover .intern-node{
+  border-color:var(--cyan);box-shadow:0 0 0 6px var(--bg),0 0 28px rgba(6,182,212,.3);
+  transform:scale(1.05);
+}
+.intern-card{
+  background:var(--surface);border:1px solid var(--b1);border-radius:14px;
+  padding:1.5rem 1.75rem;position:relative;overflow:hidden;
+  transition:all .25s;
+}
+.intern-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--cyan),var(--violet),transparent);
+  transform:scaleX(0);transform-origin:left;transition:transform .4s ease;
+}
+.intern-item:hover .intern-card{background:var(--surface2);border-color:var(--b2)}
+.intern-item:hover .intern-card::before{transform:scaleX(1)}
+.intern-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:.6rem}
+.intern-role{font-size:1rem;font-weight:600;color:var(--text);letter-spacing:-.01em}
+.intern-org{font-family:var(--mono);font-size:11.5px;color:var(--cyan3);margin-top:2px}
+.intern-status{
+  font-family:var(--mono);font-size:9px;padding:3px 10px;border-radius:20px;
+  letter-spacing:.05em;white-space:nowrap;flex-shrink:0;
+}
+.is-current{color:var(--green);border:1px solid rgba(16,185,129,.3);background:rgba(16,185,129,.08)}
+.is-done{color:var(--t2);border:1px solid var(--b1);background:var(--surface)}
+.is-open{color:var(--amber);border:1px solid rgba(245,158,11,.3);background:rgba(245,158,11,.08)}
+.intern-meta{
+  display:flex;gap:1.25rem;flex-wrap:wrap;
+  font-family:var(--mono);font-size:10.5px;color:var(--t3);margin-bottom:.9rem;
+}
+.intern-meta span strong{color:var(--t2);font-weight:500}
+.intern-desc{font-size:.86rem;color:var(--t2);line-height:1.7;margin-bottom:1rem}
+.intern-tags{display:flex;flex-wrap:wrap;gap:6px}
+.intern-tag{font-family:var(--mono);font-size:9.5px;color:var(--t3);border:1px solid var(--b1);padding:3px 9px;border-radius:4px;background:var(--bg3)}
+ 
+/* the "open to opportunities" CTA node at the bottom of the timeline */
+.intern-cta{
+  position:relative;display:grid;grid-template-columns:56px 1fr;gap:1.75rem;
+}
+.intern-cta-node{
+  width:56px;height:56px;border-radius:14px;position:relative;z-index:1;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--bg3);border:1px dashed var(--b2);
+  font-size:18px;box-shadow:0 0 0 6px var(--bg);
+}
+.intern-cta-card{
+  border:1px dashed var(--b2);border-radius:14px;padding:1.1rem 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+  background:transparent;
+}
+.intern-cta-text{font-size:.85rem;color:var(--t2)}
+.intern-cta-text strong{color:var(--cyan3)}
+.intern-mode.mode-remote::before {
+  content: "🌐 ";
+}
+.intern-mode.mode-physical::before {
+  content: "🏢 ";
+}
+.intern-certificate {
+  margin-top: 1rem;
+}
+
+.cert-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #4f8cff, #38b6ff);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  box-shadow: 0 2px 8px rgba(79, 140, 255, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.cert-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79, 140, 255, 0.45);
+  filter: brightness(1.05);
+}
+
+.cert-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(79, 140, 255, 0.35);
+}
+
+.cert-btn-icon {
+  font-size: 1rem;
+}
+
+.cert-btn-arrow {
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+.cert-btn:hover .cert-btn-arrow {
+  transform: translate(2px, -2px);
+}
+.intern-certificate {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.cert-link {
+  color: var(--accent, #4f8cff);
+  text-decoration: none;
+  border-bottom: 1px dashed currentColor;
+}
+.cert-link:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+ .intern-certificate {
+  margin-top: 1.25rem;
+}
+
+.cert-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #7ee8fa;
+  text-decoration: none;
+  background: rgba(20, 30, 45, 0.6);
+  border: 1px solid rgba(126, 232, 250, 0.35);
+  overflow: hidden;
+  transition: color 0.25s ease, border-color 0.25s ease,
+              box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+/* animated gradient border glow, matching the card top edge */
+.cert-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  padding: 1px;
+  background: linear-gradient(120deg, #22d3ee, #818cf8, #22d3ee);
+  background-size: 200% 200%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  animation: cert-shimmer 3s linear infinite;
+}
+
+.cert-btn:hover {
+  color: #e0f7ff;
+  border-color: transparent;
+  box-shadow: 0 0 16px rgba(34, 211, 238, 0.35),
+              0 0 4px rgba(129, 140, 248, 0.4);
+  transform: translateY(-2px);
+}
+
+.cert-btn:hover::before {
+  opacity: 1;
+}
+
+.cert-btn:active {
+  transform: translateY(0);
+}
+
+.cert-btn-icon {
+  font-size: 0.95rem;
+}
+
+.cert-btn-arrow {
+  transition: transform 0.25s ease;
+}
+
+.cert-btn:hover .cert-btn-arrow {
+  transform: translateX(3px);
+}
+
+@keyframes cert-shimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+@media(max-width:700px){
+  .intern-item,.intern-cta{grid-template-columns:44px 1fr;gap:1rem}
+  .intern-node,.intern-cta-node{width:44px;height:44px;font-size:15px}
+  .intern-wrap::before{left:21px}
+}
+
+
 /* ═══ PROJECTS ═══ */
 .filter-bar{display:flex;gap:6px;flex-wrap:wrap;margin:2rem 0 1.5rem}
 .fb{
@@ -767,6 +985,7 @@ h2.st{font-size:clamp(1.75rem,3.5vw,2.4rem);font-weight:700;letter-spacing:-.025
   </a>
   <div class="nlinks">
     <a href="#skills">skills</a>
+    <a href="#internships">internships</a>
     <a href="#projects">projects</a>
     <a href="#research">research</a>
     <a href="#about">about</a>
@@ -993,6 +1212,77 @@ h2.st{font-size:clamp(1.75rem,3.5vw,2.4rem);font-weight:700;letter-spacing:-.025
   </div>
 </section>
 
+<hr class="divline">
+
+  <!-- INTERNSHIPS -->
+<div class="alt-bg">
+<section class="sw" id="internships">
+  <div class="reveal">
+    <p class="eyebrow">experience.timeline()</p>
+    <h2 class="st">Internships &amp; hands-on experience</h2>
+    <p class="sub">Where the models met the real world — practical exposure applying data science outside the classroom.</p>
+  </div>
+ 
+  
+  <div class="intern-wrap reveal">
+ 
+    
+  <!-- INTERNSHIP 1 -->
+<div class="intern-item">
+  <div class="intern-node">🧠</div>
+  <div class="intern-card">
+    <div class="intern-top">
+      <div>
+        <div class="intern-role">Data Science Intern</div>
+        <div class="intern-org">Saiket Systems</div>
+      </div>
+      <span class="intern-status is-current">● completed</span>
+    </div>
+
+    <div class="intern-meta">
+      <span><strong>Duration:</strong> June,2026</span>
+      <!-- Use "mode-remote" or "mode-physical" depending on internship type -->
+      <span class="intern-mode mode-remote">
+        <strong>Mode:</strong> Remote
+      </span>
+      <span><strong>Team:</strong> Analytics &amp; ML</span>
+    </div>
+
+    <p class="intern-desc">
+      Developed machine learning solutions, performed EDA and data preprocessing, 
+      built predictive models, and gained hands-on experience with Python-based data science workflows.
+    </p>
+
+    <div class="intern-tags">
+      <span class="intern-tag">Python</span><span class="intern-tag">Pandas</span>
+      <span class="intern-tag">Scikit-learn</span><span class="intern-tag">SQL</span>
+    </div>
+
+    <!-- Certificate section -->
+    <div class="intern-certificate">
+      <a href="certificates/placeholder-analytics.pdf" target="_blank" rel="noopener" class="cert-btn">
+        <span class="cert-btn-icon">📜</span>
+        <span>View Certificate</span>
+        <span class="cert-btn-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+ 
+    
+    <!-- OPEN-TO-OPPORTUNITIES CTA -->
+    <div class="intern-cta">
+      <div class="intern-cta-node">🚀</div>
+      <div class="intern-cta-card">
+        <p class="intern-cta-text"><strong>Currently seeking</strong> a Data Science / ML internship for 2026 — open to remote, hybrid, or on-site roles.</p>
+        <a href="#contact" class="btn2" style="white-space:nowrap">→ get in touch</a>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+</div>
+ 
 <hr class="divline">
 
 <!-- PROJECTS -->
